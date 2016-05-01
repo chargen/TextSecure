@@ -83,6 +83,8 @@
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Rückgriff auf unverschlüsselte MMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Diese Nachricht wird <b>nicht</b> verschlüsselt sein, da der Kontakt Signal nicht mehr verwendet.\n\nUnsichere Nachricht senden?</string>
   <string name="ConversationItem_unable_to_open_media">Keine App zum Öffnen dieser Medieninhalte gefunden.</string>
+  <string name="ConversationItem_from_s">von %s</string>
+  <string name="ConversationItem_to_s">an %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">Verschlüsselung neu starten?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">Hilfreich bei Problemen mit der Verschlüsselung in dieser Unterhaltung. Ihre Nachrichten bleiben erhalten.</string>
@@ -140,12 +142,25 @@
     <item quantity="other">Unwiderruflich alle %1$d ausgewählten Nachrichten löschen.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Im Gerätespeicher speichern?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">Das Speichern dieser Medieninhalte im Gerätespeicher ermöglicht allen anderen Apps Ihres Geräts darauf Zugriff.\n\nTrotzdem fortfahren?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Fehler beim Speichern des Anhangs im Gerätespeicher!</string>
-  <string name="ConversationFragment_success_exclamation">Erfolgreich!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Das Speichern dieses Medieninhalts im Gerätespeicher ermöglicht jeder anderen installierten App darauf Zugriff.\n\nTrotzdem fortfahren?</item>
+    <item quantity="other">Das Speichern aller %1$d Medieninhalte im Gerätespeicher ermöglicht jeder anderen installierten App darauf Zugriff.\n\nTrotzdem fortfahren?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">Fehler beim Speichern des Anhangs im Gerätespeicher!</item>
+    <item quantity="other">Fehler beim Speichern der Anhänge im Gerätespeicher!</item>
+  </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Datei erfolgreich gespeichert.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Kein Schreibzugriff auf Gerätespeicher!</string>
-  <string name="ConversationFragment_saving_attachment">Anhang speichern</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Anhang wird im Gerätespeicher gespeichert …</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">Anhang speichern</item>
+    <item quantity="other">%1$d Anhänge speichern</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Anhang wird im Gerätespeicher gespeichert …</item>
+    <item quantity="other">%1$d Anhänge werden im Gerätespeicher gespeichert …</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Anhänge werden gesammelt …</string>
   <string name="ConversationFragment_pending">Ausstehend …</string>
   <string name="ConversationFragment_push">Datenkanal (Signal)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -215,7 +230,7 @@
   <string name="ExportFragment_exporting_plaintext_to_storage">Klartext wird in Gerätespeicher exportiert …</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Kein Schreibzugriff auf Gerätespeicher.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Fehler beim Schreiben auf Gerätespeicher.</string>
-  <string name="ExportFragment_success">Erfolgreich!</string>
+  <string name="ExportFragment_export_successful">Exportieren erfolgreich abgeschlossen.</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Dauerhafter Signal-Kommunikationsfehler!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Signal konnte nicht für die Google Play-Dienste registriert werden. Signal-Nachrichten und -Anrufe wurden daher deaktiviert. Bitte registrieren Sie Signal im Menü „Einstellungen“ &gt; „Weitere Einstellungen“ erneut.</string>
@@ -294,8 +309,8 @@
   <string name="MmsDownloader_error_reading_mms_settings">MMS-Einstellungen des Mobilfunkanbieters konnten nicht gelesen werden …</string>
   <!--- NotificationBarManager-->
   <string name="NotificationBarManager_signal_call_in_progress">Signal-Anruf läuft</string>
-  <string name="NotificationBarManager_missed_call_from_s">Verpasster Anruf von %s</string>
-  <string name="NotificationBarManager_missed_signal_call">Verpasster Signal-Anruf</string>
+  <string name="NotificationBarManager_missed_call_from_s">Entgangener Anruf von %s</string>
+  <string name="NotificationBarManager_missed_signal_call">Entgangener Signal-Anruf</string>
   <string name="NotificationBarManager__establishing_signal_call">Signal-Anruf wird hergestellt</string>
   <string name="NotificationBarManager__incoming_signal_call">Eingehender Signal-Anruf</string>
   <string name="NotificationBarManager__deny_call">Anruf ablehnen</string>
@@ -310,7 +325,7 @@
   <string name="MessageRecord_updated_group">Gruppe wurde aktualisiert.</string>
   <string name="MessageRecord_s_called_you">Eingegangener Anruf von %s</string>
   <string name="MessageRecord_called_s">Ausgegangener Anruf an %s</string>
-  <string name="MessageRecord_missed_call_from">Verpasster Anruf von %s</string>
+  <string name="MessageRecord_missed_call_from">Entgangener Anruf von %s</string>
   <string name="MessageRecord_s_is_on_signal_say_hey">%s ist bei Signal. Zeit, Hallo zu sagen! </string>
   <!--PassphraseChangeActivity-->
   <string name="PassphraseChangeActivity_passphrases_dont_match_exclamation">Passwörter stimmen nicht überein!</string>
@@ -322,7 +337,8 @@
   <string name="DeviceProvisioningActivity_continue">WEITER</string>
   <string name="DeviceProvisioningActivity_title">Gerät verbinden?</string>
   <string name="DeviceProvisioningActivity_content_intro">Folgende Rechte werden vergeben:</string>
-  <string name="DeviceProvisioningActivity_content_bullets">• Alle Nachrichten lesen\n• Nachrichten in Ihrem Namen senden</string>
+  <string name="DeviceProvisioningActivity_content_bullets">
+• Alle Ihre Nachrichten lesen\n• Nachrichten in Ihrem Namen versenden</string>
   <string name="DeviceProvisioningActivity_content_progress_title">Gerät verknüpfen</string>
   <string name="DeviceProvisioningActivity_content_progress_content">Neues Gerät wird verknüpft …</string>
   <string name="DeviceProvisioningActivity_content_progress_success">Gerät freigeschaltet!</string>
@@ -435,15 +451,15 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="ThreadRecord_draft">Entwurf:</string>
   <string name="ThreadRecord_called">Ausgegangener Anruf</string>
   <string name="ThreadRecord_called_you">Eingegangener Anruf</string>
-  <string name="ThreadRecord_missed_call">Verpasster Anruf</string>
+  <string name="ThreadRecord_missed_call">Entgangener Anruf</string>
   <string name="ThreadRecord_media_message">Nachricht mit Medieninhalten</string>
   <string name="ThreadRecord_s_is_on_signal_say_hey">%s ist bei Signal. Zeit, Hallo zu sagen!</string>
   <!--VerifyIdentityActivity-->
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Sie haben keinen eigenen Schlüssel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Kontakt hat keinen Schlüssel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Kontakt hat keinen Schlüssel!</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">QR-Code einscannen</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Ihren QR-Code anzeigen</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">QR-Code einscannen</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Ihren QR-Code anzeigen</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ACHTUNG: Der eingescannte Schlüssel stimmt NICHT überein! Bitte überprüfen Sie den Text des Schlüssels sorgfältig.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NICHT überprüft!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Der Schlüssel des Kontakts ist korrekt. Lassen Sie ihn auch Ihren eigenen Schlüssel überprüfen.</string>
@@ -451,8 +467,8 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Sie haben keinen eigenen Schlüssel!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Sie haben keinen eigenen Schlüssel.</string>
-  <string name="ViewIdentityActivity_scan_to_compare">QR-Code einscannen</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Ihren QR-Code anzeigen</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">QR-Code einscannen</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Ihren QR-Code anzeigen</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ACHTUNG: Der eingescannte Schlüssel stimmt NICHT überein!</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">NICHT überprüft!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Der eingescannte Schlüssel stimmt überein!</string>
@@ -485,6 +501,8 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importieren wird durchgeführt</string>
   <string name="ApplicationMigrationService_importing_text_messages">Nachrichten werden importiert</string>
+  <string name="ApplicationMigrationService_import_complete">Importieren abgeschlossen</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">Importieren der Systemdatenbank abgeschlossen.</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">Zum Öffnen antippen.</string>
   <string name="KeyCachingService_signal_passphrase_cached_with_lock">Zum Öffnen antippen oder zum Schließen Schloss antippen.</string>
@@ -539,6 +557,7 @@ Schlüsselaustausch-Nachricht für eine ungültige Protokollversion empfangen.</
   <string name="conversation_activity__type_message_push">Signal-Nachricht senden</string>
   <string name="conversation_activity__type_message_sms_insecure">Unsichere SMS senden</string>
   <string name="conversation_activity__type_message_mms_insecure">Unsichere MMS senden</string>
+  <string name="conversation_activity__from_sim_name">Von %1$s</string>
   <string name="conversation_activity__send">Senden</string>
   <string name="conversation_activity__remove">Entfernen</string>
   <string name="conversation_activity__window_description">Unterhaltung mit %1$s</string>
@@ -718,7 +737,7 @@ Die Überprüfung der SMS-Bestätigung hat zu lange gedauert.</string>
   <string name="AndroidManifest__media_overview">Alle Bilder</string>
   <string name="AndroidManifest__media_overview_named">Alle Bilder mit %1$s</string>
   <string name="AndroidManifest__message_details">Nachrichtendetails</string>
-  <string name="AndroidManifest_manage_linked_devices">Verknüpfte Geräte verwalten</string>
+  <string name="AndroidManifest__linked_devices">Verknüpfte Geräte</string>
   <string name="AndroidManifest__invite_friends">Freunde einladen</string>
   <string name="AndroidManifest_archived_conversations">Archivierte Unterhaltungen</string>
   <!--arrays.xml-->
@@ -827,7 +846,7 @@ Die Überprüfung der SMS-Bestätigung hat zu lange gedauert.</string>
   <string name="preferences__conversation_length_limit">Höchstzahl an Nachrichten</string>
   <string name="preferences__trim_all_conversations_now">Alle Unterhaltungen jetzt kürzen</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Alle Unterhaltungen prüfen und deren Längenbegrenzung sicherstellen</string>
-  <string name="preferences__devices">Geräte</string>
+  <string name="preferences__linked_devices">Verknüpfte Geräte</string>
   <string name="preferences__light_theme">Hell</string>
   <string name="preferences__dark_theme">Dunkel</string>
   <string name="preferences__appearance">Darstellung</string>
@@ -916,8 +935,8 @@ Die Überprüfung der SMS-Bestätigung hat zu lange gedauert.</string>
   <string name="conversation_group_options__broadcast">Übertragen</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Vergleichen</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Ihren QR-Code anzeigen</string>
-  <string name="key_scanning__menu_scan_to_compare">QR-Code einscannen</string>
+  <string name="key_scanning__menu_display_your_qr_code">Ihren QR-Code anzeigen</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">QR-Code einscannen</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Neue Unterhaltung</string>
   <string name="text_secure_normal__menu_new_group">Neue Gruppe</string>
@@ -958,6 +977,8 @@ Die Überprüfung der SMS-Bestätigung hat zu lange gedauert.</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nicht unterstützter Medieninhaltetyp</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Speichern</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Alle speichern</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Bildvorschau</string>
   <!--new_conversation_activity-->

@@ -59,7 +59,7 @@
   <!--CallScreen-->
   <string name="CallScreen_Incoming_call">Gelen arama</string>
   <!--ConfirmIdentityDialog-->
-  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">%1$s için tanımlama anahtarı değişti. Bunun anlamı birisi senin iletişimini kesmeye çalışıyor, veya %2$s Signal\'i tekrardan yükledi ve şimdi yeni bir tanımlama anahtarı var.</string>
+  <string name="ConfirmIdentityDialog_the_signature_on_this_key_exchange_is_different">%1$s için tanımlama anahtarı değişti. Bunun anlamı birisi sizin iletişiminizi kesmeye çalışıyor, veya %2$s Signal\'i tekrardan yükledi ve şimdi yeni bir tanımlama anahtarı var.</string>
   <string name="ConfirmIdentityDialog_you_may_wish_to_verify_this_contact">Bu kişiyi doğrulamak isteyebilirsiniz.</string>
   <string name="ConfirmIdentityDialog_accept">Kabul et</string>
   <!--ContactsDatabase-->
@@ -80,6 +80,8 @@
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Şifrelenmemiş MMS\'e geri dönülsün mü?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Bu mesaj alıcının artık Signal kullanıcısı olmaması nedeniyle şifrelenmiş olarak <b>gönderilemez</b>. \n\nGüvensiz mesaj gönderilsin mi?</string>
   <string name="ConversationItem_unable_to_open_media">Bu medyayı açabilen bir uygulama bulunamadı.</string>
+  <string name="ConversationItem_from_s">gönderen %s</string>
+  <string name="ConversationItem_to_s">alıcı %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">Güvenli oturumu sıfırla?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">Bu sohbette şifreleme sorunları yaşıyorsanız bu işlem yardımcı olabilir. Mesajlarınız saklanacaktır.</string>
@@ -134,12 +136,21 @@
     <item quantity="other">Bu işlem seçtiğiniz %1$d mesajı kalıcı olarak silecektir.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Depolama alanına kaydedilsin mi?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">Bu medyayı depolama alanına kaydetmekle, telefondaki diğer uygulamaların erişmesine izin vereceksiniz.\n\nDevam etmek istiyor musunuz?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Depolama alanına ek kaydedilirken hata!</string>
-  <string name="ConversationFragment_success_exclamation">Başarılı!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="other">%1$d medyanın tümünü depolama alanına kaydetmek, telefonunuzda ki diğer uygulamaların erişimine izin verecektir.\n\nDevam edilsin mi?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="other">Depolama alanına ek kaydedilirken hata oluştu!</item>
+  </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Dosya başarıyla kaydedildi.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Depolama alanına yazılamıyor!</string>
-  <string name="ConversationFragment_saving_attachment">Ek kaydediliyor</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Depolama alanına ek kaydediliyor...</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="other">%1$d kaydediliyor</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="other">%1$d depolama alanına kaydediliyor...</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Ekler toplanıyor...</string>
   <string name="ConversationFragment_pending">Bekleyen...</string>
   <string name="ConversationFragment_push">Veri (Signal)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -205,7 +216,7 @@
   <string name="ExportFragment_exporting_plaintext_to_storage">Metin dışa aktarılıyor...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Hata, depolama alanına yazılamıyor.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Depolama alanına yazılırken hata.</string>
-  <string name="ExportFragment_success">Başarılı!</string>
+  <string name="ExportFragment_export_successful">Dışa aktarma başarılı.</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Kalıcı Signal haberleşme hatası!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Signal Google Play Servislerine kayıt olamadı. Signal mesajları ve aramaları devre dışı bırakıldı, Lütfen Ayarlar &gt; Gelişmiş kısmından tekrardan kayıt olmayı deneyin.</string>
@@ -287,8 +298,8 @@
   <string name="NotificationBarManager_missed_signal_call">Cevapsız Signal araması</string>
   <string name="NotificationBarManager__establishing_signal_call">Signal araması kuruluyor</string>
   <string name="NotificationBarManager__incoming_signal_call">Gelen Signal araması</string>
-  <string name="NotificationBarManager__deny_call">Çağrıyı reddet</string>
-  <string name="NotificationBarManager__answer_call">Çağrıyı cevapla</string>
+  <string name="NotificationBarManager__deny_call">Reddet</string>
+  <string name="NotificationBarManager__answer_call">Cevapla</string>
   <string name="NotificationBarManager__end_call">Aramayı sonlandır</string>
   <string name="NotificationBarManager__cancel_call">Aramayı iptal et</string>
   <!--NotificationMmsMessageRecord-->
@@ -333,8 +344,8 @@
   <!--RatingManager-->
   <string name="RatingManager_rate_this_app">Bu uygulamaya puan verin</string>
   <string name="RatingManager_if_you_enjoy_using_this_app_please_take_a_moment">Bu uygulamayı kullanmaktan hoşlanıyorsanız, lütfen bir dakikanızı ayırıp puan vererek bize yardımcı olun.</string>
-  <string name="RatingManager_rate_now">Şimdi değerlendir!</string>
-  <string name="RatingManager_no_thanks">Hayır teşekkürler</string>
+  <string name="RatingManager_rate_now">Puan ver!</string>
+  <string name="RatingManager_no_thanks">Hayır</string>
   <string name="RatingManager_later">Sonra</string>
   <!--RecipientPreferencesActivity-->
   <string name="RecipientPreferenceActivity_block_this_contact_question">Bu kişiyi engelle?</string>
@@ -367,7 +378,7 @@
   <string name="RedPhone_the_number_you_dialed_does_not_support_secure_voice">Aradığınız numara güvenli ses sistemini desteklemiyor!</string>
   <string name="RedPhone_got_it">Anladım</string>
   <!--RegistrationActivity-->
-  <string name="RegistrationActivity_connect_with_signal">Signal\'le iletişim kur</string>
+  <string name="RegistrationActivity_connect_with_signal">Signal\'le bağlan</string>
   <string name="RegistrationActivity_select_your_country">Ülkenizi seçin</string>
   <string name="RegistrationActivity_you_must_specify_your_country_code">Ülke kodunuzu
         girmelisiniz
@@ -439,8 +450,8 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Alıcının kimlik anahtarı yok.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Alıcının kimlik anahtarı yok!</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Karşılaştırmak için anahtarını tarayın</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Anahtarınızı taratın</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Kişinin QR kodunu tara</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">QR kodunuzu görüntüleyin</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">UYARI, taranan anahtar EŞLEŞMİYOR! Parmak izi metnini dikkatlice inceleyin.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">Doğrulanmadı!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Onların anahtarı doğru. Anahtarınızı onlarla da doğrulamanız gerekiyor.</string>
@@ -448,8 +459,8 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Kimlik anahtarınız yok!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Kimlik anahtarınız yok.</string>
-  <string name="ViewIdentityActivity_scan_to_compare">Karşılaştırmak için tarayın</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Karşılaştırmak için taratın</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Kişinin QR kodunu tara</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">QR kodunuzu görüntüleyin</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UYARI, taranan anahtar EŞLEŞMİYOR!</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">Doğrulanamadı!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Taranan anahtar eşleşiyor!</string>
@@ -460,7 +471,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="KeyExchangeInitiator_send">Gönder</string>
   <!--MessageDisplayHelper-->
   <string name="MessageDisplayHelper_bad_encrypted_message">Bozuk şifrelenmiş mesaj...</string>
-  <string name="MessageDisplayHelper_decrypting_please_wait">Şifre çözülüyor, bekleyin...</string>
+  <string name="MessageDisplayHelper_decrypting_please_wait">Şifre çözülüyor, lütfen bekleyin...</string>
   <string name="MessageDisplayHelper_message_encrypted_for_non_existing_session">Mesaj var olmayan oturum için şifrelendi...</string>
   <!--EncryptingSmsDatabase-->
   <string name="EncryptingSmsDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
@@ -474,7 +485,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="MmsDatabase_mms_pending_download">İndirmeye devam etmek için dokunun ve MMS ayarlarını yapılandırın.</string>
   <string name="MmsDatabase_error_decrypting_message">Mesaj şifre çözme hatası.</string>
   <!--MmsMessageRecord-->
-  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS şifresi çözülüyor, bekleyin...</string>
+  <string name="MmsMessageRecord_decrypting_mms_please_wait">MMS şifresi çözülüyor, lütfen bekleyin...</string>
   <string name="MmsMessageRecord_bad_encrypted_mms_message">Bozuk şifrelenmiş MMS mesajı...</string>
   <string name="MmsMessageRecord_mms_message_encrypted_for_non_existing_session">MMS mesajı var olmayan oturum için şifrelendi...</string>
   <!--MuteDialog-->
@@ -482,9 +493,11 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">İçe aktarma sürüyor</string>
   <string name="ApplicationMigrationService_importing_text_messages">Mesajlar içe aktarılıyor</string>
+  <string name="ApplicationMigrationService_import_complete">Aktarım tamamlandı</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">Sistem veritabanı aktarması tamamlandı.</string>
   <!--KeyCachingService-->
-  <string name="KeyCachingService_signal_passphrase_cached">Açmak için dokun.</string>
-  <string name="KeyCachingService_signal_passphrase_cached_with_lock">Açmak için dokun, veya kapatmak için kilide dokun.</string>
+  <string name="KeyCachingService_signal_passphrase_cached">Açmak için dokunun.</string>
+  <string name="KeyCachingService_signal_passphrase_cached_with_lock">Açmak için dokunun, veya kapatmak için kilide dokunun.</string>
   <string name="KeyCachingService_passphrase_cached">Signal kilidi açıldı</string>
   <string name="KeyCachingService_lock">Parola ile kilitle</string>
   <!--MessageNotifier-->
@@ -536,6 +549,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="conversation_activity__type_message_push">Signal mesajı gönder</string>
   <string name="conversation_activity__type_message_sms_insecure">Güvensiz SMS gönder</string>
   <string name="conversation_activity__type_message_mms_insecure">Güvensiz MMS gönder</string>
+  <string name="conversation_activity__from_sim_name">Gönderen %1$s</string>
   <string name="conversation_activity__send">Gönder</string>
   <string name="conversation_activity__remove">Kaldır</string>
   <string name="conversation_activity__window_description">%1$s ile sohbet</string>
@@ -595,7 +609,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="import_fragment__restore_encrypted_backup">Şifrelenmiş yedeğini geri yükleyin</string>
   <string name="import_fragment__restore_a_previously_exported_encrypted_signal_backup">Daha önce dışa aktarılmış şifreli Signal yedeğini geri yükleyin</string>
   <string name="import_fragment__import_plaintext_backup">Şifrelenmemiş metin yedeğini içe aktar</string>
-  <string name="import_fragment__import_a_plaintext_backup_file">SMS yedeği ile uyumlu bir metin yedeğini içe aktar &amp; Geri yükle</string>
+  <string name="import_fragment__import_a_plaintext_backup_file">SMS yedeği ile uyumlu bir metin yedeğini İçe aktar &amp; Geri yükle</string>
   <!--load_more_header-->
   <string name="load_more_header__see_full_conversation">Tüm sohbeti gör</string>
   <!--media_overview_activity-->
@@ -619,7 +633,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <!--prompt_passphrase_activity-->
   <string name="prompt_passphrase_activity__unlock">Kilidi aç</string>
   <!--prompt_mms_activity-->
-  <string name="prompt_mms_activity__signal_requires_mms_settings_to_deliver_media_and_group_messages">Signal medya ve grup mesajlarının kablosuz taşıyıcı aracılığıyla taşıyabilmesi için MMS ayarlarının yapılmasını gerektirir. Cihazınız bu bilgiyi sağlamamaktadır. Bu durum bazen kilitli veya diğer kısıtlı yapılandırılmış cihazlar için geçerli olabilmektedir.</string>
+  <string name="prompt_mms_activity__signal_requires_mms_settings_to_deliver_media_and_group_messages">Signal medya ve grup mesajlarını kablosuz taşıyıcı aracılığıyla taşıyabilmesi için MMS ayarlarının yapılmasını gerektirir. Cihazınız bu bilgiyi sağlamamaktadır. Bu durum bazen kilitli veya diğer kısıtlı yapılandırılmış cihazlar için geçerli olabilmektedir.</string>
   <string name="prompt_mms_activity__to_send_media_and_group_messages_tap_ok">Medya veya grup mesajları gönderebilmek için \'Tamam\' seçeneğine dokunup istenen ayarları tamamlayınız. Taşıyıcınızın MMS ayarları genellikle \'taşıyıcı MMS\' araştırılarak bulunabilir. Bunu bir kez yapmanız gerekecektir.</string>
   <!--recipient_preferences_activity-->
   <string name="recipient_preference_activity__blocked">ENGELLİ</string>
@@ -640,7 +654,7 @@ Geçersiz protokol sürümünde anahtar değişim mesajı alındı.</string>
   <string name="redphone_call_controls__signal_call">Signal araması</string>
   <!--registration_activity-->
   <string name="registration_activity__verify_your_number_to_connect_with_signal">
-Signal ile bağlanmak için telefon numaranızı doğrulayın.</string>
+Signal\'le bağlanmak için telefon numaranızı doğrulayın.</string>
   <string name="registration_activity__your_country">ÜLKENİZ</string>
   <string name="registration_activity__your_country_code_and_phone_number">ÜLKE KODUNUZ VE
         TELEFON NUMARANIZ
@@ -651,7 +665,7 @@ Signal ile bağlanmak için telefon numaranızı doğrulayın.</string>
   <string name="registration_activity__powered_by_twilio">twilio tarafından desteklenmektedir</string>
   <!--registration_problems-->
   <string name="registration_problems__some_possible_problems_include">Muhtemel sorunlar
-        içinde:
+        dahil:
     </string>
   <string name="registration_problems__sms_interceptors">SMS yakalayıcılar.</string>
   <string name="registration_problems__some_third_party_text_messaging_clients_such_as_handcent">
@@ -665,7 +679,7 @@ Signal Google Voice numaraları ile çalışmaz.</string>
   <!--registration_progress_activity-->
   <string name="registration_progress_activity__voice_verification">Ses doğrulama</string>
   <string name="registration_progress_activity__signal_can_also_call_you_to_verify_your_number">
-Signal ayrıca numaranızı doğrulamak için sizi arayabilir. \'Beni Ara\' kısmına dokunun ve duyduğunuz altı haneli kodu aşağıda girin.</string>
+Signal ayrıca numaranızı doğrulamak için sizi arayabilir. \'Beni Ara\' kısmına dokunun ve duyduğunuz altı haneli kodu aşağıya girin.</string>
   <string name="registration_progress_activity__verify">Doğrula</string>
   <string name="registration_progress_activity__call_me">Beni ara</string>
   <string name="registration_progress_activity__edit_number">Numarayı düzenle</string>
@@ -723,7 +737,7 @@ başarısız.</string>
   <string name="AndroidManifest__media_overview">Tüm resimler</string>
   <string name="AndroidManifest__media_overview_named">%1$s ile tüm resimler</string>
   <string name="AndroidManifest__message_details">Mesaj ayrıntıları</string>
-  <string name="AndroidManifest_manage_linked_devices">Bağlanmış cihazları yönetin</string>
+  <string name="AndroidManifest__linked_devices">Bağlı cihazlar</string>
   <string name="AndroidManifest__invite_friends">Arkadaşlarını davet et</string>
   <string name="AndroidManifest_archived_conversations">Arşivlenmiş sohbetler</string>
   <!--arrays.xml-->
@@ -772,7 +786,7 @@ başarısız.</string>
   <string name="preferences__disable_screen_security_to_allow_screen_shots">En son listelerde ve uygulama içinde ekran görüntüsü alınmasını engelle</string>
   <string name="preferences__auto_lock_signal_after_a_specified_time_interval_of_inactivity">Signal\'i belirli bir zaman aralığından sonra otomatik kilitle</string>
   <string name="preferences__inactivity_timeout_passphrase">Zaman aşımı parolası</string>
-  <string name="preferences__inactivity_timeout_interval">Zamanaşımı süresi</string>
+  <string name="preferences__inactivity_timeout_interval">Zaman aşımı süresi</string>
   <string name="preferences__notifications">Bildirimler</string>
   <string name="preferences__enable_message_notifications">Mesaj bildirimlerini etkinleştir</string>
   <string name="preferences__new_contacts_notifications">Yeni kişi bildirimleri</string>
@@ -831,7 +845,7 @@ başarısız.</string>
   <string name="preferences__conversation_length_limit">Sohbet uzunluk sınırı</string>
   <string name="preferences__trim_all_conversations_now">Tüm sohbetleri şimdi kırp</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Tüm sohbetleri tara ve sohbet uzunluğu limitlerini uygula</string>
-  <string name="preferences__devices">Cihazlar</string>
+  <string name="preferences__linked_devices">Bağlı cihazlar</string>
   <string name="preferences__light_theme">Açık</string>
   <string name="preferences__dark_theme">Koyu</string>
   <string name="preferences__appearance">Görünüm</string>
@@ -920,8 +934,8 @@ başarısız.</string>
   <string name="conversation_group_options__broadcast">Yayın</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Karşılaştır</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Karşılaştırmak için taratın</string>
-  <string name="key_scanning__menu_scan_to_compare">Karşılaştırmak için tarayın</string>
+  <string name="key_scanning__menu_display_your_qr_code">QR kodunuzu görüntüleyin</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Kişinin QR kodunu tara</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Yeni mesaj</string>
   <string name="text_secure_normal__menu_new_group">Yeni grup</string>
@@ -961,6 +975,8 @@ başarısız.</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Desteklenmeyen medya türü</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Kaydet</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Tümünü kaydet</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Resim önizleme</string>
   <!--new_conversation_activity-->

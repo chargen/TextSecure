@@ -83,6 +83,8 @@
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Terugvallen naar onversleutelde MMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Dit bericht zal <b>niet</b> versleuteld worden om dat ontvanger geen Signal meer gebruikt.\n\nOnbeveiligd bericht verzenden?</string>
   <string name="ConversationItem_unable_to_open_media">Geen app gevonden om dit bestand te openen.</string>
+  <string name="ConversationItem_from_s">van %s</string>
+  <string name="ConversationItem_to_s">naar %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">Beveiligde sessie resetten?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">Dit kan mogelijk helpen wanneer je versleutelingsproblemen hebt met dit gesprek. Je berichten blijven behouden.</string>
@@ -140,12 +142,25 @@
     <item quantity="other">Dit zal alle %1$d geselecteerde berichten permanent verwijderen.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Opslaan?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">Als je deze gegevens opslaat in de mediaopslag kunnen alle andere apps op je apparaat deze gegevens benaderen.\n\nDoorgaan?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Fout tijdens het opslaan van de bijlage!</string>
-  <string name="ConversationFragment_success_exclamation">Succesvol!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Als je al dit bestand opslaat in de mediaopslag kunnen alle andere apps op je apparaat deze gegevens benaderen.\n\nDoorgaan?</item>
+    <item quantity="other">Als je al deze %1$d gegevens opslaat in de mediaopslag kunnen alle andere apps op je apparaat deze gegevens benaderen.\n\nDoorgaan?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">Fout tijdens het opslaan van de bijlage!</item>
+    <item quantity="other">Fout tijdens het opslaan van de bijlage!</item>
+  </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Bestand succesvol opgeslagen.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Opslag niet beschrijfbaar!</string>
-  <string name="ConversationFragment_saving_attachment">Bijlage opslaan</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Bijlage aan het opslaan...</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">Bijlage opslaan</item>
+    <item quantity="other">%1$d bijlagen opslaan</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">bijlage opslaan</item>
+    <item quantity="other">%1$d bijlagen opslaan</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Bijlagen aan het verzamelen...</string>
   <string name="ConversationFragment_pending">In afwachting...</string>
   <string name="ConversationFragment_push">Data (Signal)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -215,7 +230,7 @@
   <string name="ExportFragment_exporting_plaintext_to_storage">Tekst naar opslag exporteren...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Fout, kon niet naar de opslag schrijven.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Fout tijdens het schrijven naar de opslag.</string>
-  <string name="ExportFragment_success">Succesvol!</string>
+  <string name="ExportFragment_export_successful">Export succesvol.</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Permanente Signal communicatiefout!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Signal was niet in staat met Google Play services te registreren. Signal berichten en oproepen zijn nu uitgeschakeld, probeer opnieuw te registreren via Instellingen &gt; Geavanceerd.</string>
@@ -451,8 +466,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Je hebt geen identiteitssleutel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">De ontvanger heeft geen identiteitssleutel.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">De ontvanger heeft geen identiteitssleutel!</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Scan zijn/haar sleutel om te vergelijken</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Laat jouw sleutel scannen</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Scan de QR code van het contact</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Toon je QR code</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">WAARSCHUWING, de gescande sleutel komt NIET overeen! Controleer alsjeblieft de vingerafdruk zorgvuldig.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NIET geverifieerd!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Sleutel van partner is correct. Het is ook nodig om je sleutel door de partner te laten verifiëren.</string>
@@ -460,8 +475,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Je hebt geen identiteitssleutel!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Je hebt geen identiteitssleutel.</string>
-  <string name="ViewIdentityActivity_scan_to_compare">Scan om te vergelijken</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Wordt gescand om te vergelijken</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Scan de QR code van het contact</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Toon je QR code</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">WAARSCHUWING, de gescande sleutel komt NIET overeen!</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">NIET geverifieerd!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">De gescande sleutel komt overeen!</string>
@@ -494,6 +509,8 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importeren</string>
   <string name="ApplicationMigrationService_importing_text_messages">Tekstberichten importeren</string>
+  <string name="ApplicationMigrationService_import_complete">Importeren voltooid!</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">Het importeren van de systeem database is voltooid.</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">Raak aan om te openen.</string>
   <string name="KeyCachingService_signal_passphrase_cached_with_lock">Raak aan om te openen of raak om te sluiten het slot aan.</string>
@@ -548,6 +565,7 @@ Sleuteluitwisselingsbericht ontvangen voor een verkeerde protocol-versie.</strin
   <string name="conversation_activity__type_message_push">Signal bericht versturen</string>
   <string name="conversation_activity__type_message_sms_insecure">Onbeveiligde SMS versturen</string>
   <string name="conversation_activity__type_message_mms_insecure">Onbeveiligde MMS versturen</string>
+  <string name="conversation_activity__from_sim_name">Van %1$s</string>
   <string name="conversation_activity__send">Versturen</string>
   <string name="conversation_activity__remove">Verwijderen</string>
   <string name="conversation_activity__window_description">Gesprek met %1$s</string>
@@ -733,7 +751,7 @@ Signal heeft te lang moeten wachten op het binnenkomen van de verificatie-SMS.</
   <string name="AndroidManifest__media_overview">Alle afbeeldingen</string>
   <string name="AndroidManifest__media_overview_named">Alle afbeeldingen met %1$s</string>
   <string name="AndroidManifest__message_details">Berichtdetails</string>
-  <string name="AndroidManifest_manage_linked_devices">Gekoppelde apparaten beheren</string>
+  <string name="AndroidManifest__linked_devices">Gekoppelde apparaten</string>
   <string name="AndroidManifest__invite_friends">Vrienden uitnodigen</string>
   <string name="AndroidManifest_archived_conversations">Gearchiveerde gesprekken</string>
   <!--arrays.xml-->
@@ -842,7 +860,7 @@ Signal heeft te lang moeten wachten op het binnenkomen van de verificatie-SMS.</
   <string name="preferences__conversation_length_limit">Gesprekslengtelimiet</string>
   <string name="preferences__trim_all_conversations_now">Oude berichten nu verwijderen</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Alle gesprekken scannen en de maximale gesprekslengte toepassen</string>
-  <string name="preferences__devices">Apparaten</string>
+  <string name="preferences__linked_devices">Gekoppelde apparaten</string>
   <string name="preferences__light_theme">Licht</string>
   <string name="preferences__dark_theme">Donker</string>
   <string name="preferences__appearance">Uiterlijk</string>
@@ -931,8 +949,8 @@ Signal heeft te lang moeten wachten op het binnenkomen van de verificatie-SMS.</
   <string name="conversation_group_options__broadcast">Uitzenden</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Vergelijk</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Word gescand om te vergelijken</string>
-  <string name="key_scanning__menu_scan_to_compare">Scan om te vergelijken</string>
+  <string name="key_scanning__menu_display_your_qr_code">Toon je QR code</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Scan de QR code van het contact</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nieuw bericht</string>
   <string name="text_secure_normal__menu_new_group">Nieuwe groep</string>
@@ -973,6 +991,8 @@ Signal heeft te lang moeten wachten op het binnenkomen van de verificatie-SMS.</
   <string name="MediaPreviewActivity_unssuported_media_type">Niet ondersteund mediatype</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Opslaan</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Alles opslaan</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Afbeeldingsminiatuur</string>
   <!--new_conversation_activity-->

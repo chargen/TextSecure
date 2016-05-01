@@ -88,6 +88,8 @@ este contacto.
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">¿Recurrir a MMS cifrado?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Este mensaje <b>no</b> se cifrará porque el destinatario ya no es un usuario de Signal.\n\n¿Enviar mensaje no asegurado?</string>
   <string name="ConversationItem_unable_to_open_media">No se pudo encontrar una aplicación capaz de abrir este contenido.</string>
+  <string name="ConversationItem_from_s">de %s</string>
+  <string name="ConversationItem_to_s">a %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">¿Reiniciar la sesión segura?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">Esto le puede ayudar si está teniendo problemas de cifrado en esta conversación. Sus mensajes se mantendrán.</string>
@@ -149,12 +151,25 @@ Recibido:%4$s</string>
     <item quantity="other">Esto eliminará de forma permanente los %1$d mensajes seleccionados.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">¿Guardar en el almacenamiento?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">Guardar este contenido multimedia en la memoria permitirá que cualquier otra aplicación en su dispositivo lo acceda.\n\n¿Continuar?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">¡Error al guardar adjunto en el almacenamiento!</string>
-  <string name="ConversationFragment_success_exclamation">¡Completado!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Guardar este audiovisual en el almacenamiento permitirá que cualquier otra aplicación en su dispositivo acceda a él.\n\n¿Continuar?</item>
+    <item quantity="other">Guardar todos los %1$d audiovisuales en el almacenamiento permitirá que cualquier otra aplicación en su dispositivo acceda a ellos.\n\n¿Continuar?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">¡Error al guardar adjunto en el almacenamiento!</item>
+    <item quantity="other">¡Error al guardar adjuntos en el almacenamiento!</item>
+  </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Archivo guardado con éxito.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">¡No se pudo escribir en el almacenamiento!</string>
-  <string name="ConversationFragment_saving_attachment">Guardando adjunto</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Guardando adjunto en el almacenamiento...</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">Guardando adjunto</item>
+    <item quantity="other">Guardando %1$d adjuntos</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Guardando adjunto en el almacenamiento...</item>
+    <item quantity="other">Guardando %1$d adjuntos en el almacenamiento...</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Recopilando adjuntos...</string>
   <string name="ConversationFragment_pending">Pendiente...</string>
   <string name="ConversationFragment_push">Datos (Signal)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -224,7 +239,7 @@ Recibido:%4$s</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Exportando texto plano a almacenamiento...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Error, imposible escribir en almacenamiento.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Error al escribir en almacenamiento.</string>
-  <string name="ExportFragment_success">¡Éxito!</string>
+  <string name="ExportFragment_export_successful">Exportación satisfactoria.</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">¡Fallo permanente de comunicación de Signal!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Signal fué incapaz de registrarse con Google Play Services. Los mensajes y llamadas de Signal han sido desactivados, por favor, intenta registrarte otra vez en Configuración &gt; Avanzado.</string>
@@ -475,8 +490,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">El destinatario no tiene clave de identidad.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">¡El destinatario no tiene clave de identidad!</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Escanear la clave de ellos, para comparar</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Que escaneen su clave</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Escanear códigos QR del contacto</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Mostrar su código QR</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ADVERTENCIA: la clave escaneada NO coincide. Por favor, verifique el texto de la huella digital cuidadosamente.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">¡NO verificado!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">La clave de ellos es correcta. También es necesario verificar su clave con ellos.</string>
@@ -484,8 +499,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">¡No tiene ninguna clave de identidad!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">No tiene ninguna clave de identidad.</string>
-  <string name="ViewIdentityActivity_scan_to_compare">Escanear para comparar</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Escanear su clave para comparar</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Escanear códigos QR del contacto</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Mostrar su código QR</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ADVERTENCIA: ¡las claves escaneadas NO coinciden!</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">¡NO verificada!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">¡La clave escaneada coincide!</string>
@@ -518,6 +533,8 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Importación en progreso</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importando mensajes de texto</string>
+  <string name="ApplicationMigrationService_import_complete">Importación completada</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">La importación de la base de datos al sistema está completa.</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">Pulse para abrir.</string>
   <string name="KeyCachingService_signal_passphrase_cached_with_lock">Pulse para abrir, o pulse el candado para cerrar.</string>
@@ -572,6 +589,7 @@ Se recibió un mensaje de intercambio de claves para una versión no válida del
   <string name="conversation_activity__type_message_push">Enviar mensaje de Signal</string>
   <string name="conversation_activity__type_message_sms_insecure">Enviar SMS no seguro</string>
   <string name="conversation_activity__type_message_mms_insecure">Enviar MMS no seguro</string>
+  <string name="conversation_activity__from_sim_name">De %1$s</string>
   <string name="conversation_activity__send">Enviar</string>
   <string name="conversation_activity__remove">Eliminar</string>
   <string name="conversation_activity__window_description">Conversación con %1$s</string>
@@ -775,7 +793,7 @@ por SMS.
   <string name="AndroidManifest__media_overview">Todas las imágenes</string>
   <string name="AndroidManifest__media_overview_named">Todas la imágenes con %1$s</string>
   <string name="AndroidManifest__message_details">Detalles del mensaje</string>
-  <string name="AndroidManifest_manage_linked_devices">Administrar dispositivos vinculados</string>
+  <string name="AndroidManifest__linked_devices">Dispositivos enlazados</string>
   <string name="AndroidManifest__invite_friends">Invitar amigos</string>
   <string name="AndroidManifest_archived_conversations">Conversaciones archivadas</string>
   <!--arrays.xml-->
@@ -884,7 +902,7 @@ por SMS.
   <string name="preferences__conversation_length_limit">Límite de longitud de la conversación</string>
   <string name="preferences__trim_all_conversations_now">Recortar todas las conversaciones ahora</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Escanear todas las conversaciones e imponer los límites de longitud en las conversaciones</string>
-  <string name="preferences__devices">Dispositivos</string>
+  <string name="preferences__linked_devices">Dispositivos enlazados</string>
   <string name="preferences__light_theme">Claro</string>
   <string name="preferences__dark_theme">Oscuro</string>
   <string name="preferences__appearance">Apariencia</string>
@@ -973,8 +991,8 @@ por SMS.
   <string name="conversation_group_options__broadcast">Transmisión</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Comparar</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Escanear mi clave para comparar</string>
-  <string name="key_scanning__menu_scan_to_compare">Escanear para comparar</string>
+  <string name="key_scanning__menu_display_your_qr_code">Mostrar su código QR</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Escanear códigos QR de los contactos</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nuevo mensaje</string>
   <string name="text_secure_normal__menu_new_group">Nuevo grupo</string>
@@ -1015,6 +1033,8 @@ por SMS.
   <string name="MediaPreviewActivity_unssuported_media_type">Formato de contenido no compatible</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Guardar</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Guardar todo</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Previsualización de imagen</string>
   <!--new_conversation_activity-->

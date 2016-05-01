@@ -87,6 +87,8 @@
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">לעבור ל־MMS לא מוצפן במידה והצפנה אינה אפשרית?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">המסר הזה <b>לא</b> יוצפן כי המקבל כבר אינו משתמש בסיגנל.\n\nהאם לשלוח מסר לא מאובטח?</string>
   <string name="ConversationItem_unable_to_open_media">לא הצלחתי למצוא אפליקציה לפתיחת המדיה הזו.</string>
+  <string name="ConversationItem_from_s">מאת %s</string>
+  <string name="ConversationItem_to_s">אל %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">לאתחל מחדש התחברות מאובטחת?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">זה יכול לעזור עם יש לך בעיות הצפנה בשיחה הזאת. המסרים שלך יישמרו.</string>
@@ -144,12 +146,25 @@
     <item quantity="other">זה ימחק לצמיתות את כל %1$d המסרים שנבחרו.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">לשמור לאחסון?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">שמירת המדיה הזאת לאחסון תאפשר לאפליקציות אחרות במכשיר שלך לגשת אליו.\n\nלהמשיך?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">שגיאה בעת שמירת הצרופה לאחסון!</string>
-  <string name="ConversationFragment_success_exclamation">זה עבד!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">שמירת המדיה הזאת לאחסון תאפשר לכל אפליקציה אחרת לגשת אליהם.\n\nלהמשיך?</item>
+    <item quantity="other">שמירת כל %1$d פריטי המדיה לאחסון תאפשר לכל אפליקציה אחרת לגשת אליהם.\n\nלהמשיך?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">שגיאה בעת שמירת הצרופה לאחסון!</item>
+    <item quantity="other">שגיאה בעת שמירת הצרופות לאחסון!</item>
+  </plurals>
+  <string name="ConversationFragment_file_saved_successfully">הקובץ נשמר בהצלחה.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">לא ניתן לכתוב לאחסון!</string>
-  <string name="ConversationFragment_saving_attachment">שומר את הצרופה</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">שומר את הצרופה לאחסון...</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">שמירת צרופה</item>
+    <item quantity="other">שמירת %1$d צרופות</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">שמירת צרופה לאחסון...</item>
+    <item quantity="other">שמירת %1$d צרופות לאחסון...</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">איסוף צרופות...</string>
   <string name="ConversationFragment_pending">ממתין...</string>
   <string name="ConversationFragment_push">נתונים (סיגנל)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -219,7 +234,7 @@
   <string name="ExportFragment_exporting_plaintext_to_storage">מייצא טקסט רגיל לאחסון...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">שגיאה, לא ניתן לכתוב לאחסון.</string>
   <string name="ExportFragment_error_while_writing_to_storage">שגיאה בעת כתיבה לאחסון.</string>
-  <string name="ExportFragment_success">זה עבד!</string>
+  <string name="ExportFragment_export_successful">הייצוא הצליח.</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">כישלון קבוע בתקשורת סיגנל!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">סיגנל לא הצליח להירשם בשירותי גוגל Play. מסרים ושיחות של סיגנל כובו, נא לנסות להירשם שוב בהגדרות &lt; מתקדם.</string>
@@ -464,8 +479,8 @@
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">אין לך מפתח זהות.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">לנמען אין מפתח זהות.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">לנמען אין מפתח זהות!</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">סריקת המפתח שלהם כדי להשוות</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">לסרוק את המפתח שלך</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">סריקת קוד QR של איש קשר</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">הצגת קוד ה־QR שלך</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">אזהרה, המפתח שנסרק אינו זהה! נא לבדוק בזהירות את הטקסט של טביעת האצבע.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">לא מאומת!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">המפתח שלהם נכון. הכרחי גם לאמת את המפתח שלך אתם.</string>
@@ -473,8 +488,8 @@
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">אין לך מפתח זהות!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">אין לך מפתח זהות.</string>
-  <string name="ViewIdentityActivity_scan_to_compare">סריקה לשם להשוואה</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">לעבור סריקה להשוואה</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">סריקת קוד QR של איש קשר</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">הצגת קוד ה־QR שלך</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">אזהרה, המפתח שנסרק אינו מתאים!</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">לא מאומת!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">המפתח שנסרק מתאים!</string>
@@ -507,6 +522,8 @@
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">בתהליך ייבוא</string>
   <string name="ApplicationMigrationService_importing_text_messages">מייבא מסרים</string>
+  <string name="ApplicationMigrationService_import_complete">הייבוא הושלם</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">ייבוא</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">נא לגעת לפתיחה.</string>
   <string name="KeyCachingService_signal_passphrase_cached_with_lock">נא לגעת לפתיחה, או לגעת במנעול לסגירה.</string>
@@ -561,6 +578,7 @@
   <string name="conversation_activity__type_message_push">שליחת מסר בסיגנל</string>
   <string name="conversation_activity__type_message_sms_insecure">שליחת SMS לא מאובטח</string>
   <string name="conversation_activity__type_message_mms_insecure">שליחת MMS לא מאובטח</string>
+  <string name="conversation_activity__from_sim_name">מ־%1$s</string>
   <string name="conversation_activity__send">שליחה</string>
   <string name="conversation_activity__remove">הסרה</string>
   <string name="conversation_activity__window_description">שיחה עם %1$s</string>
@@ -751,7 +769,7 @@
   <string name="AndroidManifest__media_overview">כל התמונות</string>
   <string name="AndroidManifest__media_overview_named">כל התמונות עם %1$s</string>
   <string name="AndroidManifest__message_details">פרטי מסר</string>
-  <string name="AndroidManifest_manage_linked_devices">ניהול מכשירים מקושרים</string>
+  <string name="AndroidManifest__linked_devices">מכשירים מקושרים</string>
   <string name="AndroidManifest__invite_friends">להזמין חברים</string>
   <string name="AndroidManifest_archived_conversations">שיחות גנוזות</string>
   <!--arrays.xml-->
@@ -860,7 +878,7 @@
   <string name="preferences__conversation_length_limit">הגבלת אורך שיחה</string>
   <string name="preferences__trim_all_conversations_now">לקצץ את כל השיחות כעת</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">לסרוק את כל השיחות ולאכוף את הגבלות אורך השיחה</string>
-  <string name="preferences__devices">מכשירים</string>
+  <string name="preferences__linked_devices">מכשירים מקושרים</string>
   <string name="preferences__light_theme">בהירה</string>
   <string name="preferences__dark_theme">חשוכה</string>
   <string name="preferences__appearance">מראה</string>
@@ -949,8 +967,8 @@
   <string name="conversation_group_options__broadcast">שידור</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">השוואה</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">עבור סריקה להשוואה</string>
-  <string name="key_scanning__menu_scan_to_compare">סריקה להשוואה</string>
+  <string name="key_scanning__menu_display_your_qr_code">הצגת קוד ה־QR שלך</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">סריקת קוד QR של איש קשר</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">מסר חדש</string>
   <string name="text_secure_normal__menu_new_group">קבוצה חדשה</string>
@@ -991,6 +1009,8 @@
   <string name="MediaPreviewActivity_unssuported_media_type">סוג מדיה שאינו נתמך</string>
   <!--media_preview-->
   <string name="media_preview__save_title">שמירה</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">לשמור הכול</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">תצוגה מקדימה של תמונה</string>
   <!--new_conversation_activity-->

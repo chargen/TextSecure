@@ -84,6 +84,8 @@
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Разреши преминавене към не шифровани MMS-и?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Това съобщение <b>НЯМА</b> да бъде криптирано, защото получтеля вече не е потребител на Signal.\n\nИзпрати незащитено съобщение?</string>
   <string name="ConversationItem_unable_to_open_media">Неуспешно откриване на приложение за отваряне на този файл.</string>
+  <string name="ConversationItem_from_s">от %s</string>
+  <string name="ConversationItem_to_s">do %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">Рестартирай сигурната сесия?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">Това може да помогне ако имате проблеми с екрипцията в този разговор. Вашите съобщения ще бъдат запазени.</string>
@@ -141,12 +143,24 @@
     <item quantity="other">Това ще изтрие невъзвращаемо всичките  %1$d избрани съобщения.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Запази на SD картата?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">Запазване на този файл на външната памет ще разреши на всички други приложения да го виждат и променят.\n\nПродължи?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Грешка при запазване на прикачения файл на SD карта!</string>
-  <string name="ConversationFragment_success_exclamation">Успех!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Запазването на този медиен файл ще даде достъп до него на всички други приложения.\n\nПродължи?</item>
+    <item quantity="other">Запазването на всички %1$d медийни файла ще даде достъп до тях на всички други приложения.\n\nПродължи?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">Грешка при запазването на прикаченият файл!</item>
+    <item quantity="other">Грешка при запазването на прикачените файлове!</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Неуспеше запис на SD карта!</string>
-  <string name="ConversationFragment_saving_attachment">Запазване на прикачения файл</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Запазване на прикачения файл на SD карта...</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">Запазване на прикачения файл</item>
+    <item quantity="other">Запазване на %1$d прикачени файла</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Запазване на прикачения файл...</item>
+    <item quantity="other">Запазване на %1$d прикачени файла...</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Събиране на прикачените файлове...</string>
   <string name="ConversationFragment_pending">Предстоящ...</string>
   <string name="ConversationFragment_push">Данни (Signal)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -216,7 +230,6 @@
   <string name="ExportFragment_exporting_plaintext_to_storage">Изнеси некриптирано на външната памет...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Грешка, неуспешен опит за запис на външната памет.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Грешка при записване на външната памет.</string>
-  <string name="ExportFragment_success">Успех!</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Перманентна Signal комуникационна грешка!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Signal не успя да се регистрира с Google Play Services. Signal съообщения и разговори са деактивирани, моля пререгистрирайте през менюто Настройки &gt; Допълнителние.</string>
@@ -459,8 +472,8 @@ SMS-те от системния архив в Signal. Ако вече сте в
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Нямаш ключ за самоличност.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Получателят няма ключ за самоличност.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Получателят няма ключ за самоличност.</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Сканирай ключа им за сравнение</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Сканирай моя ключ</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Сканирай QR кодът на контакта</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Покажи собствения QR code</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">ВНИМАНИЕ, сканираният ключ НЕ Е същият! Моля, провери текстовия отпечатък внимателно.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">НЕ Е Проверен!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Техният ключ е правилен. Необходимо е да се провери и твоят ключ от тях.</string>
@@ -468,8 +481,8 @@ SMS-те от системния архив в Signal. Ако вече сте в
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Нямаш ключ за самоличност!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Нямаш ключ за самоличност!</string>
-  <string name="ViewIdentityActivity_scan_to_compare">Сканирай за сравнение</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Позволи сканиране за сравнение</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Сканирай QR кодът на контакта</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Покажи собствения QR code</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">ВНИМАНИЕ, сканираният ключ НЕ Е съвпада!</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">Не потвърдено!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Сканираният ключ е същия!</string>
@@ -502,6 +515,7 @@ SMS-те от системния архив в Signal. Ако вече сте в
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Извършва се внасяне</string>
   <string name="ApplicationMigrationService_importing_text_messages">Внасяне на текстови съобщения</string>
+  <string name="ApplicationMigrationService_import_complete">Внасянето завършено</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">Натисните, за да отворите.</string>
   <string name="KeyCachingService_signal_passphrase_cached_with_lock">Натиснете, за да отворите или натиснете катинара, за да затворите.</string>
@@ -556,6 +570,7 @@ SMS-те от системния архив в Signal. Ако вече сте в
   <string name="conversation_activity__type_message_push">Изпрати Signal съобщение</string>
   <string name="conversation_activity__type_message_sms_insecure">Изпрати некриптиран SMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Изпрати некриптиран MMS</string>
+  <string name="conversation_activity__from_sim_name">От %1$s</string>
   <string name="conversation_activity__send">Изпрати</string>
   <string name="conversation_activity__remove">Премахни</string>
   <string name="conversation_activity__window_description">Разговор с %1$s</string>
@@ -748,7 +763,6 @@ Signal чака твърде дълго за SMS потвърждение.</stri
   <string name="AndroidManifest__media_overview">Всички изображения</string>
   <string name="AndroidManifest__media_overview_named">Всички изображения с %1$s</string>
   <string name="AndroidManifest__message_details">Информация за съобщението</string>
-  <string name="AndroidManifest_manage_linked_devices">Управление на свързани устройства</string>
   <string name="AndroidManifest__invite_friends">Поканете приятели</string>
   <string name="AndroidManifest_archived_conversations">Архивирани разговори</string>
   <!--arrays.xml-->
@@ -857,7 +871,6 @@ Signal чака твърде дълго за SMS потвърждение.</stri
   <string name="preferences__conversation_length_limit">Граница за дължина на разговора</string>
   <string name="preferences__trim_all_conversations_now">Скъси всички разговори сега</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Сканирай всички разговори и приложи ограничението за дължина на разговори</string>
-  <string name="preferences__devices">Устройства</string>
   <string name="preferences__light_theme">Светла</string>
   <string name="preferences__dark_theme">Тъмна</string>
   <string name="preferences__appearance">Външен вид</string>
@@ -946,8 +959,8 @@ Signal чака твърде дълго за SMS потвърждение.</stri
   <string name="conversation_group_options__broadcast">Предаване</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Сравни</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Позволи сканиране за сравнение</string>
-  <string name="key_scanning__menu_scan_to_compare">Сканирай за сравнение</string>
+  <string name="key_scanning__menu_display_your_qr_code">Покажи собствения QR code</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Сканирай QR кодът на контакта</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Ново съобщение</string>
   <string name="text_secure_normal__menu_new_group">Нова група</string>
@@ -988,6 +1001,8 @@ Signal чака твърде дълго за SMS потвърждение.</stri
   <string name="MediaPreviewActivity_unssuported_media_type">Неподдържан медиен формат.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Запази</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Запази всички</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Преглед на изображението</string>
   <!--new_conversation_activity-->

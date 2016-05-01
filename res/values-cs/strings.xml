@@ -88,6 +88,8 @@ kontakt</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Použít záložní způsob přes nešifrovanou MMS?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tato zpráva <b>není</b> šifrována, protože příjemce již není uživatelem Signal.\n\nOdeslat nešifrovanou zprávu?</string>
   <string name="ConversationItem_unable_to_open_media">Nemohu nalézt aplikaci pro otevření tohoto typu dat.</string>
+  <string name="ConversationItem_from_s">od %s</string>
+  <string name="ConversationItem_to_s">%s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">Resetovat zabezpečenou konverzaci?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">Může to pomoct pokud máte problém s šifrováním této konverzace. Vaše zprávy zůstanou zachovány.</string>
@@ -148,12 +150,28 @@ kontakt</string>
     <item quantity="other">Tímto trvale smažete všech %1$d označených zpráv.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Uložit do paměti?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">Uložením dat do paměti k nim umožníte přístup kterékoliv aplikaci ve svém telefonu.\n\nPokračovat?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Chyba při ukládání přílohy!</string>
-  <string name="ConversationFragment_success_exclamation">Úspěšně dokončeno!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Uložíte-li přílohu do úložiště, budou k ní mít přístup všechny aplikace ve vašem zařízení.\n\nPokračovat?</item>
+    <item quantity="few">Uložíte-li %1$d přílohy do úložiště, budou k nim mít přístup všechny aplikace ve vašem zařízení.\n\nPokračovat?</item>
+    <item quantity="other">Uložíte-li všech %1$d příloh do úložiště, budou k nim mít přístup všechny aplikace ve vašem zařízení.\n\nPokračovat?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">Chyba při ukládání příloy!</item>
+    <item quantity="few">Chyba při ukládání příloh!</item>
+    <item quantity="other">Chyba při ukládání příloh!</item>
+  </plurals>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Nelze uložit data do paměti.</string>
-  <string name="ConversationFragment_saving_attachment">Ukládám přílohu</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Ukládám přílohu do paměti.</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">Ukládám přílohu</item>
+    <item quantity="few">Ukládám %1$d přílohy</item>
+    <item quantity="other">Ukládám %1$d příloh</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Příloha uložena do úložiště</item>
+    <item quantity="few">Uloženo %1$d přílohy do úložiště</item>
+    <item quantity="other">Uloženo %1$d příloh do úložiště</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Shromažďuji přílohy...</string>
   <string name="ConversationFragment_pending">Probíhající:</string>
   <string name="ConversationFragment_push">Data(Signal)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -227,7 +245,6 @@ kontakt</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Exportovat nešifrovaný text do úložiště.</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Chyba, nelze zapisovat do úložiště.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Chyba během zápisu do úložiště</string>
-  <string name="ExportFragment_success">Úspěšně dokončeno!</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Trvalá chyba komunikace Signal!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Sginal se nemůže registrovat k službě Google Play. Zprávy a volání jsou proto zakázány: Prosím zkuste se znovu registrovat v menu Nastavení &gt; Rozšířené.</string>
@@ -462,8 +479,8 @@ Obdržen požadavek na výměnu klíčů pro neplatnou verzi protokolu.</string>
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">Nemáte identifikační klíč.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">Příjemce nemá identifikační klíč.</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Příjemce nemá identifikační klíč!</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Nasnímat cizí klíč pro srovnání</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Získejte váš naskenovaný klíč</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Skenovat QR kód kontaktu</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Zobrazit váš QR kód</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">VAROVÁNÍ, nasnímaný klíč NENÍ SPRÁVNÝ! Zkontrolujte prosím textový otisk.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">NEověřeno!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Klíč protistrany je správný. Protistrana by měla ještě ověřit váš vlastní klíč.</string>
@@ -471,8 +488,8 @@ Obdržen požadavek na výměnu klíčů pro neplatnou verzi protokolu.</string>
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Nemáte identifikační klíč!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">Nemáte identifikační klíč.</string>
-  <string name="ViewIdentityActivity_scan_to_compare">Nasnímej a porovnej</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Nechat se naskenovat k porovnání</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Skenovat QR kód kontaktu</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Zobrazit váš QR kód</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">UPOZORNĚNÍ: naskenovaný klíč nesouhlasí</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">NEověřeno!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Nasnímaný klíč souhlasí!</string>
@@ -505,6 +522,7 @@ Obdržen požadavek na výměnu klíčů pro neplatnou verzi protokolu.</string>
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Probíhá import</string>
   <string name="ApplicationMigrationService_importing_text_messages">Importuji textové zprávy</string>
+  <string name="ApplicationMigrationService_import_complete">Import dokončen</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">Stisknutím otevřete.</string>
   <string name="KeyCachingService_signal_passphrase_cached_with_lock">Dotykem otevřete nebo stisknutím zámku uzamkněte.</string>
@@ -559,6 +577,7 @@ Obdržen požadavek na výměnu klíčů pro neplatnou verzi protokolu.</string>
   <string name="conversation_activity__type_message_push">Poslat Signal zprávu</string>
   <string name="conversation_activity__type_message_sms_insecure">Poslat nezabezpečenou SMS</string>
   <string name="conversation_activity__type_message_mms_insecure">Poslat nezabezpečenou MMS</string>
+  <string name="conversation_activity__from_sim_name">Od %1$s</string>
   <string name="conversation_activity__send">Odeslat</string>
   <string name="conversation_activity__remove">Odebrat</string>
   <string name="conversation_activity__window_description">Konverzace s %1$s</string>
@@ -751,7 +770,6 @@ Signal se nedočkal přijetí ověřovací SMS. </string>
   <string name="AndroidManifest__media_overview">Všechny obrázky</string>
   <string name="AndroidManifest__media_overview_named">Všechny obrázky s %1$s</string>
   <string name="AndroidManifest__message_details">Podrobnosti zprávy</string>
-  <string name="AndroidManifest_manage_linked_devices">Spravovat provázaná zařízení</string>
   <string name="AndroidManifest__invite_friends">Pozvat přátele</string>
   <string name="AndroidManifest_archived_conversations">Archivované konverzace</string>
   <!--arrays.xml-->
@@ -861,7 +879,6 @@ Signal se nedočkal přijetí ověřovací SMS. </string>
   <string name="preferences__conversation_length_limit">Limit délky konverzací</string>
   <string name="preferences__trim_all_conversations_now">Zkrátit všechny konverzace teď</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Prohledat všechny konverzace a uplatnit limit délky.</string>
-  <string name="preferences__devices">Zařízení</string>
   <string name="preferences__light_theme">Světlý</string>
   <string name="preferences__dark_theme">Tmavý</string>
   <string name="preferences__appearance">Chování</string>
@@ -950,8 +967,8 @@ Signal se nedočkal přijetí ověřovací SMS. </string>
   <string name="conversation_group_options__broadcast">Rozeslat</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Porovnat</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Nechat se naskenovat</string>
-  <string name="key_scanning__menu_scan_to_compare">Nasnímej a porovnej</string>
+  <string name="key_scanning__menu_display_your_qr_code">Zobrazit váš QR kód</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Skenovat QR kód kontaktu</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Nová zpráva</string>
   <string name="text_secure_normal__menu_new_group">Nová skupina</string>
@@ -993,6 +1010,8 @@ Signal se nedočkal přijetí ověřovací SMS. </string>
   <string name="MediaPreviewActivity_unssuported_media_type">Nepodporovaný typ dat.</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Uložit</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Uložit vše</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Náhled obrázku</string>
   <!--new_conversation_activity-->

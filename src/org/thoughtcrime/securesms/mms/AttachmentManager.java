@@ -52,7 +52,7 @@ import org.thoughtcrime.securesms.util.ViewUtil;
 import org.thoughtcrime.securesms.util.concurrent.AssertedSuccessListener;
 import org.thoughtcrime.securesms.util.concurrent.ListenableFuture;
 import org.thoughtcrime.securesms.util.concurrent.ListenableFuture.Listener;
-import org.whispersystems.libaxolotl.util.guava.Optional;
+import org.whispersystems.libsignal.util.guava.Optional;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -159,7 +159,8 @@ public class AttachmentManager {
       @Override
       public void onSuccess(@NonNull Bitmap result) {
         byte[]        blob          = BitmapUtil.toByteArray(result);
-        Uri           uri           = PersistentBlobProvider.getInstance(context).create(masterSecret, blob);
+        Uri           uri           = PersistentBlobProvider.getInstance(context)
+                                                            .create(masterSecret, blob, ContentType.IMAGE_PNG);
         LocationSlide locationSlide = new LocationSlide(context, uri, blob.length, place);
 
         setSlide(locationSlide);
@@ -273,7 +274,8 @@ public class AttachmentManager {
       Intent captureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
       if (captureIntent.resolveActivity(activity.getPackageManager()) != null) {
         if (captureUri == null) {
-          captureUri = PersistentBlobProvider.getInstance(context).createForExternal();
+          captureUri = PersistentBlobProvider.getInstance(context)
+                                             .createForExternal(ContentType.IMAGE_JPEG);
         }
         Log.w(TAG, "captureUri path is " + captureUri.getPath());
         captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, captureUri);

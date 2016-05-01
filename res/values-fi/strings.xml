@@ -87,6 +87,8 @@ tämän yhteystiedon.</string>
   <string name="ConversationItem_click_to_approve_unencrypted_mms_dialog_title">Käytetäänkö salaamattomia MMS-viestejä?</string>
   <string name="ConversationItem_click_to_approve_unencrypted_dialog_message">Tätä viestiä <b>ei</b> voida salata, koska vastaanottaja ei enää käytä Signalia.\n\nLähetetäänkö salaamattomana?</string>
   <string name="ConversationItem_unable_to_open_media">Median avaamiseen ei löytynyt sovellusta.</string>
+  <string name="ConversationItem_from_s">SIM-kortilta %s</string>
+  <string name="ConversationItem_to_s">vastaanotettu SIM-kortille %s</string>
   <!--ConversationActivity-->
   <string name="ConversationActivity_reset_secure_session_question">Alusta suojattu istunto?</string>
   <string name="ConversationActivity_this_may_help_if_youre_having_encryption_problems">Tämä saattaa auttaa, jos tässä keskustelussa on ilmennyt salaukseen liittyviä ongelmia. Huom. tämä ei poista eikä muokkaa mitenkään olemassa olevia viestejä.</string>
@@ -148,12 +150,25 @@ Vastaanotettu: %4$s</string>
     <item quantity="other">Tämä poistaa pysyvästi kaikki %1$d valittua viestiä.</item>
   </plurals>
   <string name="ConversationFragment_save_to_sd_card">Kopioi tallennustilaan?</string>
-  <string name="ConversationFragment_saving_this_media_to_storage_warning">Jos kopioit tämän tiedoston laitteesi tallennustilaan, niin kaikki muutkin sovellukset saavat oikeuden käyttää sitä.\n\nHaluatko jatkaa?</string>
-  <string name="ConversationFragment_error_while_saving_attachment_to_sd_card">Tiedoston tallennuksessa sattui virhe!</string>
-  <string name="ConversationFragment_success_exclamation">Onnistui!</string>
+  <plurals name="ConversationFragment_saving_n_media_to_storage_warning">
+    <item quantity="one">Jos kopioit tämän tiedoston laitteesi tallennustilaan, niin kaikki muutkin sovellukset saavat oikeuden käyttää sitä.\n\nHaluatko jatkaa?</item>
+    <item quantity="other">Jos kopioit kaikki %1$d tiedostoa laitteesi tallennustilaan, niin kaikki muutkin sovellukset saavat oikeuden käyttää niitä.\n\nHaluatko jatkaa?</item>
+  </plurals>
+  <plurals name="ConversationFragment_error_while_saving_attachments_to_sd_card">
+    <item quantity="one">Virhe tallennettaessa liitetiedostoa laitteesi tallennustilaan!</item>
+    <item quantity="other">Virhe tallennettaessa liitetiedostoja laitteesi tallennustilaan!</item>
+  </plurals>
+  <string name="ConversationFragment_file_saved_successfully">Tiedoston tallennus onnistui.</string>
   <string name="ConversationFragment_unable_to_write_to_sd_card_exclamation">Tallennustilaan kirjoitus epäonnistui!</string>
-  <string name="ConversationFragment_saving_attachment">Liitettä tallennetaan</string>
-  <string name="ConversationFragment_saving_attachment_to_sd_card">Kopioidaan liitettä tallennustilaan...</string>
+  <plurals name="ConversationFragment_saving_n_attachments">
+    <item quantity="one">Tallennetaan liitetiedostoa</item>
+    <item quantity="other">Tallennetaan %1$d liitetiedostoa</item>
+  </plurals>
+  <plurals name="ConversationFragment_saving_n_attachments_to_sd_card">
+    <item quantity="one">Tallennetaan liitetiedostoa tallennustilaan...</item>
+    <item quantity="other">Tallennetaan %1$d liitetiedostoa tallennustilaan...</item>
+  </plurals>
+  <string name="ConversationFragment_collecting_attahments">Kerätään liitetiedostoja...</string>
   <string name="ConversationFragment_pending">Käsiteltävänä...</string>
   <string name="ConversationFragment_push">Tietoverkko (Signal)</string>
   <string name="ConversationFragment_mms">MMS</string>
@@ -223,7 +238,7 @@ Vastaanotettu: %4$s</string>
   <string name="ExportFragment_exporting_plaintext_to_storage">Viedään salaamattomana tallennustilaan...</string>
   <string name="ExportFragment_error_unable_to_write_to_storage">Virhe: tallennustilaan kirjoitus epäonnistui.</string>
   <string name="ExportFragment_error_while_writing_to_storage">Tallennustilaan kirjoitettaessa sattui virhe.</string>
-  <string name="ExportFragment_success">Onnistui!</string>
+  <string name="ExportFragment_export_successful">Vienti onnistui.</string>
   <!--GcmRefreshJob-->
   <string name="GcmRefreshJob_Permanent_Signal_communication_failure">Pysyvä Signal-yhteysvirhe!</string>
   <string name="GcmRefreshJob_Signal_was_unable_to_register_with_Google_Play_Services">Signal ei voinut rekisteröityä Google Play Services -palveluun, minkä vuoksi Signal-viestit ja puhelut ovat otettu pois käytöstä. Kokeile rekisteröityä uudelleen Signalin lisäasetuksista.</string>
@@ -292,7 +307,7 @@ seuraa niiden uudelleentuonnista viestien kaksoiskappaleita.</string>
   </plurals>
   <string name="InviteActivity_lets_switch_to_signal">Hei, vaihdetaan Signaliin: %1$s</string>
   <string name="InviteActivity_no_app_to_share_to">Näyttää siltä, ettei sinulla ole yhtään sovellusta, johon jakaa.</string>
-  <string name="InviteActivity_friends_dont_let_friends_text_unencrypted">Kaveri ei anna kaverin keskustella salaamattomasti.</string>
+  <string name="InviteActivity_friends_dont_let_friends_text_unencrypted">Kaveri ei anna kaverin keskustella ilman salausta.</string>
   <!--KeyScanningActivity-->
   <string name="KeyScanningActivity_no_scanned_key_found_exclamation">Ei löytynyt skannattavaa avainta!</string>
   <string name="KeyScanningActivity_install_barcode_Scanner">Asenna \"Barcode Scanner\" -viivakoodinlukija?</string>
@@ -464,8 +479,8 @@ Vastaanotetiin avaintenvaihtoviesti, joka kuuluu väärälle protokollaversiolle
   <string name="VerifyIdentityActivity_you_do_not_have_an_identity_key">(Sinulla ei ole identiteettiavainta.)</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key">(Vastapuolella ei ole identiteettiavainta.)</string>
   <string name="VerifyIdentityActivity_recipient_has_no_identity_key_exclamation">Vastapuolella ei ole identiteettiavainta!</string>
-  <string name="VerifyIdentityActivity_scan_their_key_to_compare">Skannaa vastapuolen avaimen QR-koodi</string>
-  <string name="VerifyIdentityActivity_get_your_key_scanned">Näytä oman avaimesi QR-koodi</string>
+  <string name="VerifyIdentityActivity_scan_contacts_qr_code">Skannaa vastapuolen QR-koodi</string>
+  <string name="VerifyIdentityActivity_display_your_qr_code">Näytä oma QR-koodisi</string>
   <string name="VerifyIdentityActivity_warning_the_scanned_key_does_not_match_please_check_the_fingerprint_text_carefully">VAROITUS: Skannattu avain EI TÄSMÄÄ! Tarkastakaa sormenjälki huolella.</string>
   <string name="VerifyIdentityActivity_not_verified_exclamation">EI varmennettu!</string>
   <string name="VerifyIdentityActivity_their_key_is_correct_it_is_also_necessary_to_verify_your_key_with_them_as_well">Vastapuolen avain on oikea. Huomaa, että hänen on syytä tarkastaa vastaavasti sinun avaimesi.</string>
@@ -473,8 +488,8 @@ Vastaanotetiin avaintenvaihtoviesti, joka kuuluu väärälle protokollaversiolle
   <string name="VerifyIdentityActivity_you_don_t_have_an_identity_key_exclamation">Sinulla ei ole identiteettiavainta!</string>
   <!--ViewIdentityActivity-->
   <string name="ViewIdentityActivity_you_do_not_have_an_identity_key">(Sinulla ei ole identiteettiavainta.)</string>
-  <string name="ViewIdentityActivity_scan_to_compare">Skannaa vastapuolen avaimen QR-koodi</string>
-  <string name="ViewIdentityActivity_get_scanned_to_compare">Näytä oman avaimesi QR-koodi</string>
+  <string name="ViewIdentityActivity_scan_contacts_qr_code">Skannaa vastapuolen QR-koodi</string>
+  <string name="ViewIdentityActivity_display_your_qr_code">Näytä oma QR-koodisi</string>
   <string name="ViewIdentityActivity_warning_the_scanned_key_does_not_match_exclamation">VAROITUS: Skannattu avain EI TÄSMÄÄ!</string>
   <string name="ViewIdentityActivity_not_verified_exclamation">EI vahvistettu!</string>
   <string name="ViewIdentityActivity_the_scanned_key_matches_exclamation">Skannattu avain täsmää!</string>
@@ -507,9 +522,11 @@ Vastaanotetiin avaintenvaihtoviesti, joka kuuluu väärälle protokollaversiolle
   <!--ApplicationMigrationService-->
   <string name="ApplicationMigrationService_import_in_progress">Tuonti käynnissä</string>
   <string name="ApplicationMigrationService_importing_text_messages">Tuo tekstiviestejä</string>
+  <string name="ApplicationMigrationService_import_complete">Tuonti valmis</string>
+  <string name="ApplicationMigrationService_system_database_import_is_complete">Järjestelmän tekstiviestitietokannan tuonti Signaliin on valmis.</string>
   <!--KeyCachingService-->
   <string name="KeyCachingService_signal_passphrase_cached">Siirry takaisin sovellukseen koskettamalla tästä.</string>
-  <string name="KeyCachingService_signal_passphrase_cached_with_lock">Avaa sovellus koskettamalla tästä tai lukitse se koskettamalla lukkoa</string>
+  <string name="KeyCachingService_signal_passphrase_cached_with_lock">Lukitse sovellus koskettamalla lukkoa.</string>
   <string name="KeyCachingService_passphrase_cached">Signalin lukitus on auki</string>
   <string name="KeyCachingService_lock">Lukitse salalauseella</string>
   <!--MessageNotifier-->
@@ -561,6 +578,7 @@ Vastaanotetiin avaintenvaihtoviesti, joka kuuluu väärälle protokollaversiolle
   <string name="conversation_activity__type_message_push">Lähetä Signal-viesti</string>
   <string name="conversation_activity__type_message_sms_insecure">Lähetä salaamaton tekstiviesti</string>
   <string name="conversation_activity__type_message_mms_insecure">Lähetä salaamaton MMS-viesti</string>
+  <string name="conversation_activity__from_sim_name">SIM-kortilta %1$s</string>
   <string name="conversation_activity__send">Lähetä</string>
   <string name="conversation_activity__remove">Poista</string>
   <string name="conversation_activity__window_description">Keskustelu %1$s kanssa</string>
@@ -699,7 +717,8 @@ sisältyvät:</string>
   <string name="registration_progress_activity__no_network_connectivity">Ei verkkoyhteyttä.</string>
   <string name="registration_progress_activity__your_device_needs_network_connectivity">Laitteesi
 tarvitsee verkkoyhteyttä tämän Signalin ominaisuuden käyttämiseksi. Tarkista, että
-laitteesi on yhdistettynä mobiilitiedonsiirto- tai WiFi-verkkoon.</string>
+laitteesi
+on yhdistettynä mobiilitiedonsiirto- tai WiFi-verkkoon.</string>
   <string name="registration_progress_activity__restrictive_firewall">Rajoittava palomuuri.</string>
   <string name="registration_progress_activity__if_you_are_connected_via_wifi_its_possible_that_there_is_a_firewall">
 Jos olet WiFi-verkossa, on mahdollista että palomuuri estää pääsyn Signalin palvelimelle. Kokeile toista verkkoa tai mobiiliverkkoa.</string>
@@ -743,7 +762,7 @@ Signal ei saanut vahvistustekstiviestiä odotusajan sisällä.</string>
   <string name="AndroidManifest__media_overview">Kaikki kuvat</string>
   <string name="AndroidManifest__media_overview_named">%1$s: kaikki kuvat</string>
   <string name="AndroidManifest__message_details">Viestin tiedot</string>
-  <string name="AndroidManifest_manage_linked_devices">Hallitse yhdistettyjä laitteita</string>
+  <string name="AndroidManifest__linked_devices">Yhdistetyt laitteet</string>
   <string name="AndroidManifest__invite_friends">Kutsu ystäviä</string>
   <string name="AndroidManifest_archived_conversations">Arkistoidut keskustelut</string>
   <!--arrays.xml-->
@@ -852,7 +871,7 @@ Signal ei saanut vahvistustekstiviestiä odotusajan sisällä.</string>
   <string name="preferences__conversation_length_limit">Keskustelun pituusraja</string>
   <string name="preferences__trim_all_conversations_now">Karsi kaikki keskustelut nyt</string>
   <string name="preferences__scan_through_all_conversations_and_enforce_conversation_length_limits">Käy läpi kaikki keskustelut ja pakota niihin pituusrajat</string>
-  <string name="preferences__devices">Laitteet</string>
+  <string name="preferences__linked_devices">Yhdistetyt laitteet</string>
   <string name="preferences__light_theme">Vaalea</string>
   <string name="preferences__dark_theme">Tumma</string>
   <string name="preferences__appearance">Ulkonäkö</string>
@@ -941,8 +960,8 @@ Signal ei saanut vahvistustekstiviestiä odotusajan sisällä.</string>
   <string name="conversation_group_options__broadcast">Lähetä</string>
   <!--key_scanning-->
   <string name="key_scanning__menu_compare">Vertaile</string>
-  <string name="key_scanning__menu_get_scanned_to_compare">Näytä oman avaimesi QR-koodi</string>
-  <string name="key_scanning__menu_scan_to_compare">Skannaa vastapuolen avaimen QR-koodi</string>
+  <string name="key_scanning__menu_display_your_qr_code">Näytä oma QR-koodisi</string>
+  <string name="key_scanning__menu_scan_contacts_qr_code">Skannaa vastapuolen QR-koodi</string>
   <!--text_secure_normal-->
   <string name="text_secure_normal__menu_new_message">Uusi viesti</string>
   <string name="text_secure_normal__menu_new_group">Uusi ryhmä</string>
@@ -983,6 +1002,8 @@ Signal ei saanut vahvistustekstiviestiä odotusajan sisällä.</string>
   <string name="MediaPreviewActivity_unssuported_media_type">Median tyyppiä ei tueta</string>
   <!--media_preview-->
   <string name="media_preview__save_title">Tallenna</string>
+  <!--media_overview-->
+  <string name="media_overview__save_all">Tallenna kaikki</string>
   <!--media_preview_activity-->
   <string name="media_preview_activity__image_content_description">Kuvan esikatselu</string>
   <!--new_conversation_activity-->

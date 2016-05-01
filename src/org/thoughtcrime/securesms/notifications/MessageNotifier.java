@@ -38,16 +38,20 @@ import android.text.TextUtils;
 import android.text.style.StyleSpan;
 import android.util.Log;
 
+import org.thoughtcrime.securesms.ApplicationContext;
 import org.thoughtcrime.securesms.ConversationActivity;
 import org.thoughtcrime.securesms.R;
 import org.thoughtcrime.securesms.crypto.MasterSecret;
 import org.thoughtcrime.securesms.database.DatabaseFactory;
+import org.thoughtcrime.securesms.database.MessagingDatabase;
+import org.thoughtcrime.securesms.database.MessagingDatabase.SyncMessageId;
 import org.thoughtcrime.securesms.database.MmsSmsDatabase;
 import org.thoughtcrime.securesms.database.PushDatabase;
 import org.thoughtcrime.securesms.database.SmsDatabase;
 import org.thoughtcrime.securesms.database.ThreadDatabase;
 import org.thoughtcrime.securesms.database.model.MediaMmsMessageRecord;
 import org.thoughtcrime.securesms.database.model.MessageRecord;
+import org.thoughtcrime.securesms.jobs.MultiDeviceReadUpdateJob;
 import org.thoughtcrime.securesms.mms.SlideDeck;
 import org.thoughtcrime.securesms.recipients.Recipient;
 import org.thoughtcrime.securesms.recipients.RecipientFactory;
@@ -55,7 +59,7 @@ import org.thoughtcrime.securesms.recipients.Recipients;
 import org.thoughtcrime.securesms.service.KeyCachingService;
 import org.thoughtcrime.securesms.util.SpanUtil;
 import org.thoughtcrime.securesms.util.TextSecurePreferences;
-import org.whispersystems.textsecure.api.messages.TextSecureEnvelope;
+import org.whispersystems.signalservice.api.messages.SignalServiceEnvelope;
 
 import java.util.List;
 import java.util.ListIterator;
@@ -136,7 +140,13 @@ public class MessageNotifier {
                                                .getRecipientsForThreadId(threadId);
 
     if (isVisible) {
-      threads.setRead(threadId);
+      List<SyncMessageId> messageIds = threads.setRead(threadId);
+
+      if (!messageIds.isEmpty()) {
+        ApplicationContext.getInstance(context)
+                          .getJobManager()
+                          .add(new MultiDeviceReadUpdateJob(context, messageIds));
+      }
     }
 
     if (!TextSecurePreferences.isNotificationsEnabled(context) ||
@@ -326,7 +336,7 @@ public class MessageNotifier {
                                                   @NonNull Cursor cursor)
   {
     PushDatabase.Reader reader = null;
-    TextSecureEnvelope envelope;
+    SignalServiceEnvelope envelope;
 
     try {
       reader = DatabaseFactory.getPushDatabase(context).readerFor(cursor);
