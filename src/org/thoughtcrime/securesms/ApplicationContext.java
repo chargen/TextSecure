@@ -34,6 +34,7 @@ import org.thoughtcrime.securesms.jobs.persistence.EncryptingJobSerializer;
 import org.thoughtcrime.securesms.jobs.requirements.MasterSecretRequirementProvider;
 import org.thoughtcrime.securesms.jobs.requirements.MediaNetworkRequirementProvider;
 import org.thoughtcrime.securesms.jobs.requirements.ServiceRequirementProvider;
+import org.thoughtcrime.securesms.service.MessageRetrievalService;
 import org.thoughtcrime.securesms.util.TextSecurePreferences;
 import org.whispersystems.jobqueue.JobManager;
 import org.whispersystems.jobqueue.dependencies.DependencyInjector;
