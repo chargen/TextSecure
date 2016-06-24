@@ -209,7 +209,7 @@ public class RegistrationActivity extends BaseActionBarActivity {
       int gcmStatus = GooglePlayServicesUtil.isGooglePlayServicesAvailable(self);
 
       if (gcmStatus != ConnectionResult.SUCCESS) {
-        if(BuildConfig.FORCE_WEBSOCKETS) {
+        if (BuildConfig.FORCE_WEBSOCKETS) {
           AlertDialog.Builder unsupportedDialog = new AlertDialog.Builder(self);
           unsupportedDialog.setTitle(getString(R.string.RegistrationActivity_unsupported));
           unsupportedDialog.setMessage(getString(R.string.RegistrationActivity_websockets_only_unsupported));
