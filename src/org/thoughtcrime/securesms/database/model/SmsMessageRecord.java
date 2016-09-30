@@ -48,11 +48,12 @@ public class SmsMessageRecord extends MessageRecord {
                           int receiptCount,
                           long type, long threadId,
                           int status, List<IdentityKeyMismatch> mismatches,
-                          int subscriptionId)
+                          int subscriptionId, long expiresIn, long expireStarted)
   {
     super(context, id, body, recipients, individualRecipient, recipientDeviceId,
           dateSent, dateReceived, threadId, status, receiptCount, type,
-          mismatches, new LinkedList<NetworkFailure>(), subscriptionId);
+          mismatches, new LinkedList<NetworkFailure>(), subscriptionId,
+          expiresIn, expireStarted);
   }
 
   public long getType() {
@@ -89,8 +90,10 @@ public class SmsMessageRecord extends MessageRecord {
       return emphasisAdded(context.getString(R.string.MessageDisplayHelper_message_encrypted_for_non_existing_session));
     } else if (!getBody().isPlaintext()) {
       return emphasisAdded(context.getString(R.string.MessageNotifier_locked_message));
-    } else if (SmsDatabase.Types.isEndSessionType(type)) {
+    } else if (isEndSession() && isOutgoing()) {
       return emphasisAdded(context.getString(R.string.SmsMessageRecord_secure_session_reset));
+    } else if (isEndSession()) {
+      return emphasisAdded(context.getString(R.string.SmsMessageRecord_secure_session_reset_s, getIndividualRecipient().toShortString()));
     } else {
       return super.getDisplayBody();
     }
